@@ -1,0 +1,26 @@
+{
+  "name": "auto-curry",
+  "version": "0.1.0",
+  "description": "Supercharge your functions by giving them the ability to auto-curry",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "curry",
+    "auto",
+    "functional",
+    "function",
+    "currying"
+  ],
+  "author": "Mudit Ameta",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zeusdeux/auto-curry"
+  },
+  "bugs": {
+    "url": "https://github.com/zeusdeux/auto-curry/issues"
+  },
+  "homepage": "https://github.com/zeusdeux/auto-curry"
+}
