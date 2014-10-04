@@ -1,11 +1,8 @@
 {
   "name": "auto-curry",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Supercharge your functions by giving them the ability to auto-curry",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "curry",
     "auto",
@@ -22,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/zeusdeux/auto-curry/issues"
   },
-  "homepage": "https://github.com/zeusdeux/auto-curry"
+  "homepage": "https://github.com/zeusdeux/auto-curry",
+  "devDependencies": {
+    "browserify": "^6.0.2",
+    "jshint": "^2.5.6",
+    "mocha": "^1.21.4",
+    "uglify-js": "^2.4.15"
+  }
 }
