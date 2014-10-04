@@ -1,5 +1,7 @@
 module.exports = function cu(fn) {
+  'use strict';
   var args = [].slice.call(arguments);
+
   if ('function' !== typeof fn) throw new Error('auto-curry: Invalid parameter. First parameter should be a function.');
   if ('function' === typeof fn && !fn.length) return fn;
   if (args.length - 1 >= fn.length) return fn.apply(this, args.slice(1));
