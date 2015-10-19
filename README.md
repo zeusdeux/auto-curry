@@ -3,6 +3,11 @@ auto-curry
 
 Supercharge your functions by giving them the ability to auto-curry.
 
+> Note:
+> This library actually uses partial application internally and not currying. So, yes, the name is a misnomer.
+> It is the result of my incorrect understanding of the concepts when I wrote the library.
+> It is still perfectly usable and is used in production.
+
 #Installation
 
 ```javascript
