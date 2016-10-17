@@ -13,13 +13,13 @@ jshint:
 	jshint $(MAIN) $(TEST)/*.js
 
 test:
-	mocha
+	@mocha
 
 $(BUILD)/auto-curry.min.js: $(MAIN)
 	$(BIN)/browserify -s autoCurry -e $(MAIN) | $(BIN)/uglifyjs \
-  -o $@ \
-  -c -m \
-  --stats
+	-o $@ \
+	-c -m \
+	--stats
 
 clean:
 	$(RM) $(BUILD)/*
