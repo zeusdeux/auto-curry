@@ -1,6 +1,6 @@
 {
   "name": "auto-curry",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Supercharge your functions by giving them the ability to auto-curry",
   "main": "index.js",
   "keywords": [

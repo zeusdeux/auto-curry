@@ -46,6 +46,10 @@ describe('auto-curry', function() {
     a.equal(add2(4), 6);
   });
 
+  it('should throw if first argument is not a function', function() {
+    a.throws(cu.bind(null, 1), /Invalid parameter/);
+  });
+
   it('should allow multiple arguments to be passed at a time', function() {
     var sum3 = cu(function(a, b, c) {
       return a + b + c;
@@ -74,13 +78,19 @@ describe('auto-curry', function() {
     a.deepEqual(x.a, [3, 4, 5, 6]);
   });
 
-  it('should return the function if its arity is zero', function() {
+  it('should return the function if its arity is zero or one', function() {
     var fn = function() {
       console.log('most useful function EVER!');
     };
-    var curriedFn = cu(fn);
+    var id = function(x) {
+      return x;
+    };
 
+    var curriedFn = cu(fn);
     a.strictEqual(curriedFn, fn);
+
+    curriedFn = cu(id);
+    a.strictEqual(curriedFn, id);
   });
 
   it('should all "just work"', function() {

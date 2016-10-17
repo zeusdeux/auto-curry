@@ -8,13 +8,13 @@ Supercharge your functions by giving them the ability to auto-curry.
 > It is the result of my incorrect understanding of the concepts when I wrote the library.
 > It is still perfectly usable and is used in production.
 
-#Installation
+# Installation
 
 ```javascript
 npm install auto-curry --save
 ```
 
-#Usage
+# Usage
 
 In `node`, you can just `require('auto-curry')`.
 
@@ -23,7 +23,7 @@ In the browser, you can use `build/auto-curry.min.js`
 - with `require.js`, `browserify` etc
 - directly by using `window.autoCurry`
 
-##Node
+## Node
 
 ```javascript
 var cu = require('auto-curry');
@@ -50,7 +50,8 @@ console.log(map(messWithThis, [1,2,3], x)); //[2, 3, 4]
 console.log(x.a); //[1, 2, 3]
 ```
 
-##Browser
+## Browser
+
 ```javascript
 var cu = window.autoCurry; //using it off the global
 var add = cu(function (a, b) {
@@ -77,6 +78,11 @@ console.log(map(messWithThis, [1,2,3], x)); //[2, 3, 4]
 console.log(x.a); //[1, 2, 3]
 ```
 
-#License
+# License
 
 [MIT](https://github.com/zeusdeux/auto-curry/blob/master/LICENSE)
+
+# Changelog
+
+#### `0.2.1`
+- Now, if the function passed to `auto-curry` has an arity of one, the function itself is returned. Earlier this was only for zero arity functions.
