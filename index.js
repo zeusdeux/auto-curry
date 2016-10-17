@@ -1,12 +1,14 @@
 module.exports = function cu(fn) {
-  'use strict';
-  var args = [].slice.call(arguments);
+  'use strict'
 
-  if ('function' !== typeof fn) throw new Error('auto-curry: Invalid parameter. First parameter should be a function.');
-  if ('function' === typeof fn && !fn.length) return fn;
-  if (args.length - 1 >= fn.length) return fn.apply(this, args.slice(1));
+  var args = [].slice.call(arguments)
+  var typeOfFn = typeof fn
+
+  if ('function' !== typeOfFn) throw new Error('auto-curry: Invalid parameter. Expected function, received ' + typeOfFn)
+  if (fn.length <= 1) return fn
+  if (args.length - 1 >= fn.length) return fn.apply(this, args.slice(1))
+
   return function() {
-    var tempArgs = args.concat([].slice.call(arguments));
-    return cu.apply(this, tempArgs);
+    return cu.apply(this, args.concat([].slice.call(arguments)))
   };
 };
