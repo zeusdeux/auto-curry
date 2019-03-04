@@ -2,7 +2,16 @@
   "name": "auto-curry",
   "version": "0.2.1",
   "description": "Supercharge your functions by giving them the ability to auto-curry",
-  "main": "index.js",
+  "source": "index.js",
+  "main": "build/index.js",
+  "umd:main": "build/index.umd.js",
+  "module": "build/index.mjs",
+  "scripts": {
+    "build": "microbundle --name autoCurry",
+    "test": "npm run build && mocha",
+    "jshint": "jshint index.js test/*.js",
+    "prepare": "npm run build && mocha"
+  },
   "keywords": [
     "curry",
     "auto",
@@ -21,9 +30,8 @@
   },
   "homepage": "https://github.com/zeusdeux/auto-curry",
   "devDependencies": {
-    "browserify": "^6.0.2",
-    "jshint": "^2.5.6",
-    "mocha": "^1.21.4",
-    "uglify-js": "^2.4.15"
+    "jshint": "^2.10.1",
+    "microbundle": "^0.10.1",
+    "mocha": "^6.0.2"
   }
 }
