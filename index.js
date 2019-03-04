@@ -1,14 +1,22 @@
-module.exports = function cu(fn) {
-  'use strict'
+export default function cu(...args) {
+  const [fn, ...rest] = args
+  const typeOfFn = typeof fn
 
-  var args = [].slice.call(arguments)
-  var typeOfFn = typeof fn
+  if ('function' !== typeOfFn) {
+    throw new Error(
+      `auto-curry: Invalid parameter. Expected function, received ${typeOfFn}`
+    )
+  }
 
-  if ('function' !== typeOfFn) throw new Error('auto-curry: Invalid parameter. Expected function, received ' + typeOfFn)
-  if (fn.length <= 1) return fn
-  if (args.length - 1 >= fn.length) return fn.apply(this, args.slice(1))
+  if (fn.length <= 1) {
+    return fn
+  }
 
-  return function() {
-    return cu.apply(this, args.concat([].slice.call(arguments)))
-  };
-};
+  if (rest.length >= fn.length) {
+    return fn.apply(this, rest)
+  }
+
+  return function(...restArgs) {
+    return cu.apply(this, [...args, ...restArgs])
+  }
+}
